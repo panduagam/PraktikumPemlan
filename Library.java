@@ -12,7 +12,7 @@ public class Library {
     public String [][] politik;
     public String [][] fiksi;
 
-    public library(){
+    public Library(){
         kategoriBuku = "";
         teknologi = new String[][]{ 
         {"The Art of Computer Programming", "Donald E. Knuth", "1968", "1088"},
@@ -87,7 +87,6 @@ public class Library {
             case 7:
                 kategoriBuku = "Fiksi";
                 return fiksi;
-            case 8:
 
             default:
                 return null;
