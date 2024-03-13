@@ -37,6 +37,8 @@ public class MainLibrary {
             }
         } while (!keluar);
 
+        System.out.println("Terima kasih karena telah berkunjung di Perpustakaan WoW");
+
         input.close();
     }
 }
