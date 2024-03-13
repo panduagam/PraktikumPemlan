@@ -94,19 +94,6 @@ public class Library {
         }
     }
 
-    public void getBuku(int buku) {
-        String [][] bukuKategori = getKategori(buku);
-        System.out.println("\nBerikut adalah daftar buku dalam kategori " + kategoriBuku + ":\n");
-        for (int i = 0; i < bukuKategori.length; i++) {
-            System.out.printf("Judul \t\t\t :%s\n",bukuKategori[i][0]);
-            System.out.printf("Penulis \t\t :%s\n",bukuKategori[i][1]);
-            System.out.printf("Tahun terbit \t\t :%s\n",bukuKategori[i][2]);
-            System.out.printf("Jumlah halaman \t\t :%s\n",bukuKategori[i][3]);
-            System.out.printf("Sinopsis \t\t :%s\n",bukuKategori[i][4]);
-            System.out.println("_______________________________________________________");
-        }
-    }
-
     public int hitungJumlahKataSinopsis(int kategori) {
         String[][] bukuKategori = getKategori(kategori);
         int totalKata = 0;
@@ -124,6 +111,19 @@ public class Library {
     public int hitungKata(String teks) {
         String[] kata = teks.split("\\s+"); 
         return kata.length;
+    }
+
+    public void getBuku(int buku) {
+        String [][] bukuKategori = getKategori(buku);
+        System.out.println("\nBerikut adalah daftar buku dalam kategori " + kategoriBuku + ":\n");
+        for (int i = 0; i < bukuKategori.length; i++) {
+            System.out.printf("Judul \t\t\t :%s\n",bukuKategori[i][0]);
+            System.out.printf("Penulis \t\t :%s\n",bukuKategori[i][1]);
+            System.out.printf("Tahun terbit \t\t :%s\n",bukuKategori[i][2]);
+            System.out.printf("Jumlah halaman \t\t :%s\n",bukuKategori[i][3]);
+            System.out.printf("Sinopsis \t\t :%s\n",bukuKategori[i][4]);
+            System.out.println("_______________________________________________________");
+        }
     }
     
     public void tampilkanSemua() {
