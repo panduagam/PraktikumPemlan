@@ -87,7 +87,8 @@ public class Library {
             case 7:
                 kategoriBuku = "Fiksi";
                 return fiksi;
-
+            case 8:
+                return new String[][]{};
             default:
                 return null;
         }
