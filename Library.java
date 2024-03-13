@@ -122,6 +122,8 @@ public class Library {
             System.out.printf("Tahun terbit \t\t :%s\n",bukuKategori[i][2]);
             System.out.printf("Jumlah halaman \t\t :%s\n",bukuKategori[i][3]);
             System.out.printf("Sinopsis \t\t :%s\n",bukuKategori[i][4]);
+            int jumlahKata = hitungKata(bukuKategori[i][4]);
+            System.out.printf("Jumlah kata sinopsis \t\s:%s\n ", jumlahKata);
             System.out.println("_______________________________________________________");
         }
     }
