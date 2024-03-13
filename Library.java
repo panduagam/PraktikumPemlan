@@ -25,19 +25,19 @@ public class Library {
             {"The Republic", "Plato", "380 BC", "712", "Filosofi politik dan etika, mencakup pemikiran tentang keadilan dan kebebasan."},
             {"Meditations", "Marcus Aurelius", "185", "128", "Pemikiran tentang kehidupan dan kebahagiaan, dengan fokus pada pencarian kebahagiaan dalam kehidupan."},
             {"The Critique of Pure Reason", "Immanuel Kant", "1781", "752", "Pemikiran tentang logika dan pengetahuan, mencakup pemikiran tentang kemungkinan dan kenyataan."},
-            {"Being and Nothingness", "Jean-Paul Sartre", "1943", "400", "Pemikiran tentang eksistensialisme, dengan fokus pada keberadaan dan kebebasan."},
+            {"Being and Nothingness", "Jean-Paul Sartre", "1943", "400", "Suatu pemikiran tentang eksistensialisme, dengan fokus pada keberadaan dan kebebasan."},
             {"The Alchemist", "Paulo Coelho", "1988", "167", "Pemikiran tentang kehidupan dan tujuan, dengan fokus pada pencarian tujuan dalam kehidupan."}
         };
         sejarah = new String[][]{
             {"A People's History of the United States", "Howard Zinn", "1980", "728", "Sejarah Amerika dari perspektif rakyat, mencakup perjuangan dan perubahan sosial."},
             {"The Guns of August", "Barbara Tuchman", "1962", "464", "Sejarah Pertama Dunia Perang, dengan fokus pada peristiwa yang mengubah dunia."},
-            {"The Rise and Fall of the Third Reich", "William L. Shirer", "1960", "1024", "Sejarah Nazi Jerman, mencakup perjalanan dan kegagalan pemerintahan totalitarian."},
+            {"The Rise and Fall of the Third Reich", "William L. Shirer", "1960", "1024", "Sejarah Nazi Jerman, mencakup tentang perjalanan dan kegagalan pemerintahan totalitarian."},
             {"The Autobiography of Malcolm X", "Malcolm X, Alex Haley", "1965", "320", "Sejarah hidup dan perjuangan Malcolm X, dengan fokus pada perjuangan anti-rasisme."},
             {"The Diary of a Young Girl", "Anne Frank", "1952", "126", "Sejarah hidup Anne Frank selama Perang Dunia II, dengan fokus pada kehidupan dalam kondisi kekerasan."}
         };
         agama = new String[][]{
-            {"The Bible", "Various Authors", "1611", "1544", "Kitab suci Kristen, mencakup pengajaran dan ajaran Kristen."},
-            {"The Qur'an", "Al-Zaid", "610", "604", "Kitab suci Islam, mencakup ajaran dan pengajaran Islam."},
+            {"The Bible", "Various Authors", "1611", "1544", "Kitab suci Agama Kristen, mencakup tentang pengajaran dan ajaran Kristen."},
+            {"The Qur'an", "Al-Zaid", "610", "604", "Kitab suci Agama Islam, mencakup tentang ajaran dan pengajaran Islam."},
             {"The Bhagavad Gita", "Krishna", "500 BC", "184", "Panduan moral dan spiritual, dengan fokus pada pencarian kebenaran dan keadilan."},
             {"The Book of Mormon", "Joseph Smith", "1830", "544", "Kitab suci Gereja Kristen Jesu Kristus dari Penghuni Bumi, mencakup pengajaran dan ajaran Gereja Kristen."},
             {"The Tao Te Ching", "Lao Tzu", "3rd century BC", "81", "Panduan hidup dan filosofi Taoisme, dengan fokus pada keseimbangan dan harmoni."}
@@ -103,10 +103,31 @@ public class Library {
             System.out.printf("Tahun terbit \t\t :%s\n",bukuKategori[i][2]);
             System.out.printf("Jumlah halaman \t\t :%s\n",bukuKategori[i][3]);
             System.out.printf("Sinopsis \t\t :%s\n",bukuKategori[i][4]);
+            int jumlahKata = hitungKata(bukuKategori[i][4]);
+            System.out.printf("Jumlah kata sinopsis \t\s:%s\n ", jumlahKata);
             System.out.println("_______________________________________________________");
         }
     }
 
+    public int hitungJumlahKataSinopsis(int kategori) {
+        String[][] bukuKategori = getKategori(kategori);
+        int totalKata = 0;
+    
+        if (bukuKategori != null) {
+            for (int i = 0; i < bukuKategori.length; i++) {
+                String sinopsis = bukuKategori[i][4];
+                totalKata += hitungKata(sinopsis);
+            }
+        }
+    
+        return totalKata;
+    }
+    
+    public int hitungKata(String teks) {
+        String[] kata = teks.split("\\s+"); 
+        return kata.length;
+    }
+    
     public void tampilkanSemua() {
         for (int i = 1; i <= 7; i++) {
             getBuku(i);
